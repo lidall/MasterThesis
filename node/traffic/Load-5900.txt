@@ -1,4 +1,4 @@
-1node1	2node2	3port	4operation	5startwave	6bandwidth
+
 3	0	5	3	217	1
 1	2	2	2	265	1
 1	0	7	3	95	1
