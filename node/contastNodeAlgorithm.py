@@ -86,10 +86,6 @@ def wavehCheck(Resource, fiber, port, wave,bandwidth):
     for i in range (bandwidth):
         if(Resource[fiber-1][port][wave+i]!=0):
             resourceFlag=1;#once the bandwidth is occupied, then stop the session
-            print wave+i
-            print fiber
-            print port 
-            print Resource[fiber-1][port][wave+i]
             break
     return resourceFlag 
 
@@ -234,7 +230,7 @@ def PassResourceRelease(infiber, inport,outfiber,outport, wave, bandwidth, bypas
 """  *********     Read file from the input files  *******    """
 trraffic = np.loadtxt('traffic.txt')
 trrafficc=np.delete(trraffic,[0],axis=1)
-print trrafficc
+
 trafficindex=np.arange(trafficNum).reshape(trafficNum,1)
 traffic_time=np.loadtxt('time.txt')
 Traffic=np.hstack((trafficindex,trrafficc,traffic_time))
@@ -270,7 +266,6 @@ for t in range(1,runTime):#start running
         #print range(trafficNum)
         if(traffic['createTime'][i]==t):
             numofTotalTraffic[t]+=1
-            print traffic['index'][i]         
             trafficCost[i]=0
            
             trafficExist[i]=1
