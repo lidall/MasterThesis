@@ -35,9 +35,9 @@ from pandas import DataFrame
 totalWave=321;
 coreNum=7;
 nodeDegree=3;
-trafficNum=130;
+trafficNum=6000;
 BypassNum=0;
-runTime=6000;
+runTime=96000;
 
 updatFlag=0;
 
@@ -336,7 +336,7 @@ Traffic=np.hstack((trafficindex,trrafficc,traffic_time))
 tra_columns=['index','preNode','nextNode','inPort','operation','nextOperation', 'startWave','bandwidth','createTime','releaseTime']
 traffic =pd.DataFrame(Traffic, columns=tra_columns,dtype=np.int64)
 #print Traffic.shape
-print traffic
+#print traffic
 
 
 
@@ -355,9 +355,9 @@ for t in range(1,runTime):#start running
     
     
    
-    print "--------------------"
-    print t
-    print "--------------------"
+    print( "--------------------")
+    print( t)
+    print( "--------------------")
     numofTraffic[t] = numofTraffic[t-1];
     numofTotalTraffic[t] = numofTotalTraffic[t-1];
     numofWSS_1st[t] = numofWSS_1st[t-1];
@@ -379,7 +379,7 @@ for t in range(1,runTime):#start running
          
         if(traffic['createTime'][i]==t):
            numofTotalTraffic[t]+=1
-           print traffic['index'][i]         
+           print( traffic['index'][i] )        
            trafficCost[i]=0
            
            trafficExist[i]=1

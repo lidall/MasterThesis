@@ -256,7 +256,7 @@ for traffic_len in range(200):
                    inputresourceFlag=wavehCheck(inputResource, infiber, inport, traffic['startWave'][i],traffic['bandwidth'][i])
                    if(inputresourceFlag==0):
                        firstFit=True
-                       ADresourceOccupy(outfiber,c,traffic['startWave'][i],traffic['index'][i],traffic['bandwidth'][i],3,firstFit)
+                       ADresourceOccupy(infiber,inport,traffic['startWave'][i],traffic['index'][i],traffic['bandwidth'][i],3,firstFit)
                        trafficOutputPort[i]=0;
                        trafficSuccess[i]=1;
                        updatFlag=1                           
