@@ -439,7 +439,11 @@ for tag_selection in range(len(Traffic_number)):
         traffic_path=[]
         traffic_feedback=[]
         Traffic_num=len(Traffic)
-        for i in range(Traffic_num):
+        
+        import time
+        start_time = time.time()
+        
+        for i in range(1):
             PathFlag=0
             #print(i)
             traffic=(Traffic['S'][i],Traffic['D'][i])
@@ -467,7 +471,10 @@ for tag_selection in range(len(Traffic_number)):
                             break
                     if(PathFlag==1):
                         break 
-                                                
+                    
+        end_time = time.time()
+        duration_time = end_time - start_time 
+        print ("Duration for one 6node nobypass traffic: ", duration_time)                                                
                     #else:
             
 

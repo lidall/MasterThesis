@@ -9,7 +9,7 @@ import matplotlib as plt
 import numpy as np
 import pandas as pd
 from itertools import permutations
-
+import time
 
 # In[22]:
 
@@ -382,7 +382,7 @@ for i in range(len(SD_path)):
 # In[25]:
 
 
-Traffic=range(1,26)
+Traffic=range(1,39)
 traffic=[x*200 for x in Traffic]
 Traffic_number=[1]+traffic
 Success_list=[]
@@ -397,7 +397,7 @@ print(Traffic_number)
 # In[26]:
 
 
-for tag_selection in range(len(Traffic_number)):
+for tag_selection in range(15,16):
     for true_selection in range(1):
         print(tag_selection)
     
@@ -439,7 +439,8 @@ for tag_selection in range(len(Traffic_number)):
         traffic_path=[]
         traffic_feedback=[]
         Traffic_num=len(Traffic)
-        for i in range(Traffic_num):
+        start_time = time.time()
+        for i in range(1):
             PathFlag=0
             #print(i)
             traffic=(Traffic['S'][i],Traffic['D'][i])
@@ -468,7 +469,10 @@ for tag_selection in range(len(Traffic_number)):
                     if(PathFlag==1):
                         break 
                                                 
-                    #else:
+        end_time = time.time()
+        duration_time = end_time - start_time 
+        print ("Duration for one 6 node traffic: ", duration_time)
+           #else:
             
 
         k=0
@@ -508,5 +512,5 @@ c={'success':Success_list,
 }
 
 test=pd.DataFrame(c)
-test.to_csv('firstfit.csv')
+#test.to_csv('firstfit-1.csv')
 

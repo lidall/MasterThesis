@@ -17,11 +17,11 @@ node_list=[0,1,2,3,4,5]
 Traffic_SD_pairs=list(permutations(node_list,2))
 
 Bandwidth=[1,2,4,16]
-Traffic=range(1,26)
+Traffic=range(1,39)
 traffic=[x*200 for x in Traffic]
 Traffic_number=[1]+traffic
 #print(Traffic)
-for i in range(26):
+for i in range(39):
     Traffic_num=Traffic_number[i]
     Traffic=[]
     for i in range(Traffic_num):
